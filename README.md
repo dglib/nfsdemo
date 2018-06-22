@@ -1,5 +1,6 @@
 # Kubernetes NFS demo
 The objective of this demonstration is to provide NFS mounts to a kubernetes pod while enforcing server-side permission write protections.
+
 ## Goals
 1. Secure UID/GID on NFS
 2. Provision NFS to a Pod
@@ -29,6 +30,7 @@ This will comprise of 4 parts:
 1. StorageClass, let's set NFS
 2. PersistentVolume, provide the nfs-server mount point
 3. PersistentVolumeClaim, provide a claim for the Pod to map to
+4. The Pod itself
 
 ## StorageClass = name: nfs
 ```
