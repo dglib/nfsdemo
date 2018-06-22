@@ -1,0 +1,55 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: nginx-pod
+spec:
+  containers:
+    - name: nginx-pod
+      image: nginx
+      volumeMounts:
+      - mountPath: "/opt"
+        name: nfstest
+  volumes:
+    - name: nfstest
+      persistentVolumeClaim:
+        claimName: nfs-pvc
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nfs-pvc
+spec:
+  storageClassName: nfs
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-pv
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+  - ReadWriteMany
+  nfs:
+    path: /nfs/nfsvol1
+    server: 172.16.1.5
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: nfs
+
+---
+kind: StorageClass
+apiVersion: storage.k8s.io/v1beta1
+metadata:
+  name: nfs
+  annotations:
+    storageclass.kubernetes.io/is-default-class: "false"
+  labels:
+    kubernetes.io/cluster-service: "true"
+provisioner: kubernetes.io/nfs
