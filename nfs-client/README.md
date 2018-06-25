@@ -1,4 +1,4 @@
-# Kubernetes NFS-Client Provisioner
+# Dynamic Kubernetes NFS-Client Provisioner
 
 [![Docker Repository on Quay](https://quay.io/repository/external_storage/nfs-client-provisioner/status "Docker Repository on Quay")](https://quay.io/repository/external_storage/nfs-client-provisioner)
 
