@@ -52,16 +52,16 @@ $ kubectl create -f serviceaccount.yaml
 serviceaccount "nfs-client-provisioner" created
 ```
 Create a Grant:
-The default service account that’s associated with the provisioner namespace needs access to Kubernetes resources, so create a grant with Restricted Control permissions.
-
+The default service account that’s associated with the provisioner namespace needs access to Kubernetes resources, so create a grant with 
+```yaml
 1. Navigate to the Grants page and click Create Grant.
 2. In the left pane, click Resource Sets, and in the Type section, click Namespaces.
 3. Enable the Apply grant to all existing and new namespaces option.
 4. In the left pane, click Roles. In the Role dropdown, select Restricted Control.
 5. In the left pane, click Subjects, and select Service Account.
-6. In the Namespace dropdown, select nfs-client-provisioner, and in the Service Account dropdown., select default.
+6. In the Namespace dropdown, select nfs-client-provisioner, and in the Service Account dropdown, select default.
 7. Click Create.
-
+```
 3. Finally, test your environment!
 
 Now we'll test your NFS provisioner.
