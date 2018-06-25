@@ -1,6 +1,7 @@
-# Kubernetes NFS demo(s) // Standard Provisioning and Dynamic Provisioning
+# Kubernetes NFS demo(s) 
+Standard Provisioning and Dynamic Provisioning
 
-# Standard NFS Kubernetes Provisioning
+### Standard NFS Kubernetes Provisioning
 The objective of this demonstration is to provide NFS mounts to a kubernetes pod while enforcing server-side permission write protections.
 
 ## Goals
