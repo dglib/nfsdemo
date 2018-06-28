@@ -11,7 +11,6 @@
 # How to deploy nfs-client to your cluster.
 
 To note, you must *already* have an NFS Server.
-If you need help, please see the previous README at https://github.com/dglib/nfsdemo/README.md
 
 1. Editing:
 
