@@ -29,7 +29,7 @@ Change line RPCNFSDOPTS=""
 To RPCNFSDOPTS=" --no-nfs-version 4"
 ```
 
-Reload the configuration blocking NFS v4/ re-enable to activate NFS Dynamic Volume provisioning.
+Reload the configuration blocking NFS v4
 
     
     sudo systemctl restart nfs-config
